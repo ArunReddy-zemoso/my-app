@@ -1,0 +1,15 @@
+.explore{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    font-family: 'Cera Pro';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.explore > p:hover{
+    border-bottom: 2px solid blue;
+}

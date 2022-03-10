@@ -1,0 +1,10 @@
+.myLibrary{
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.myLibrary > p:hover{
+    border-bottom: 2px solid blue;
+}

@@ -1,0 +1,8 @@
+.searchLogo{
+    font-size:larger;
+}
+
+.searchLogo:hover{
+    color:skyblue;
+    cursor:pointer;
+}

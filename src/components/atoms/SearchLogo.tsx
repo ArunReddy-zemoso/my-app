@@ -1,10 +1,13 @@
 import React from 'react'
-import Search from '../../images/search.png'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+
+import '../../styles/searchLogo.css'
 
 function SearchLogo() {
+  
   return (
     <div>
-      <img height="20.31px" width="20.31px"  src={Search} alt="Search"></img>
+      <SearchOutlinedIcon className="searchLogo" />
     </div>
   )
 }

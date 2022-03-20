@@ -1,6 +1,5 @@
 .App{
-  min-height: 100vh;
-  background: rgb(131, 131, 228);
+  background: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
 }
@@ -12,7 +11,10 @@ header{
   background-color: white;
 }
 
-
+.App-body {
+ min-height: 57vh;
+ position: relative;
+}
 
 footer{
   /* margin-top: auto; */

@@ -1,18 +1,27 @@
 import React from 'react'
 import '../../styles/Body.css'
-import Book from '../molecules/Book'
+import {Routes, Route} from 'react-router-dom'
+
+
+import Library from '../pages/Library'
+import NoMatch from '../molecules/NoMatch'
+import CurrentlyReading from './CurrentlyReading'
+import FinishedBooks from './FinishedBooks'
+import BookDetails from '../pages/bookdetails/BookDetails'
 
 
 function Body() {
   return (
     <div className='body'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Routes>
+          <Route path="/" element={<Library/>} >
+            <Route index element={<CurrentlyReading />} />
+            <Route path="reading" element={<CurrentlyReading/>} />
+            <Route path="finished" element={<FinishedBooks/>} />
+          </Route>
+          <Route path="*" element={<NoMatch/>}/>
+          <Route path="bookdetails" element={<BookDetails/>} />
+      </Routes>
     </div>
   )
 }

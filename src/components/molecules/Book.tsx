@@ -5,15 +5,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea,Stack} from '@mui/material';
 import Bookimage from '../../images/1.png'
-import clock from '../../images/clock.png'
-import userLogo from '../../images/user.png'
 import ButtonComponent from '../atoms/ButtonComponent'
 
+import ReadTime from '../atoms/readtime/ReadTime'
+import Readers from '../atoms/readers/Readers'
 
 export default function Book() {
     const cardStyle={
-        width:'248px',
-        height:'466px',
+        width:'350px',
+        height:'550px',
         border: '1px solid #E1ECFC',
         borderRadius: '8px',
         backgroundColor: '#FFFFFF',
@@ -21,13 +21,13 @@ export default function Book() {
     const bookNameStyle={
         fontFamily:'Cera Pro',
         fontWeight:'bold',
-        fontSize:'18px',
+        fontSize:'23px',
         color:'#033148'
     }
     const AuthorNameStyle={
         fontFamily:'Cera Pro',
         fontWeight:'500',
-        fontSize:'16px',
+        fontSize:'18px',
         color:'#6D787E'
     }
     const clockLogoStyle={
@@ -48,8 +48,8 @@ export default function Book() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="292"
-          width="294.1"
+          height="auto"
+          width="auto"
           image={Bookimage}
           alt="Book name"
         />
@@ -61,14 +61,8 @@ export default function Book() {
               Erica Keswin
           </Typography>
           <Stack mt={1.5} direction="row" alignItems="center" justifyContent="space-between">
-            <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-                <img style={clockLogoStyle} src={clock} alt="" />
-                <p style={timeReadStyle}>13-minute read</p>
-            </Stack>
-            <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-                <img style={clockLogoStyle} src={userLogo} alt="" />
-                <p style={timeReadStyle}>1.9k reads</p>
-            </Stack>
+            <ReadTime />
+            <Readers />
           </Stack>
           <ButtonComponent />
         </CardContent>

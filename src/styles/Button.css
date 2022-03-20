@@ -1,4 +1,7 @@
 .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 500;
@@ -8,5 +11,15 @@
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin: 0px 8px;
+    height:auto;
+    width:100%;
+    top: 14px;
+}
+
+p{
+    font-size:20px;
+}
+
+.button > p:hover{
+    border-bottom: 1px solid blue;
 }

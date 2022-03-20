@@ -4,8 +4,8 @@ import '../../styles/Button.css'
 
 function ButtonComponent() {
   return (
-    <div style={{width: '100%',display: 'flex',justifyContent: 'center',alignItems: 'center'}}>
-      <Button className='button'>Finished</Button>
+    <div style={{width: '100%',height: '40px',display: 'flex',justifyContent: 'center',margin: '0px 2px',alignItems: 'center'}}>
+      <Button className='button'><p>Finished</p></Button>
     </div>
   )
 }

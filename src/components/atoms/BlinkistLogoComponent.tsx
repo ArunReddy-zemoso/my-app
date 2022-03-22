@@ -1,5 +1,5 @@
 import React from "react";
-import blinkistLogo from "../../images/blinkistLogo.png"
+import blinkistLogo from "../../resources/images/blinkistLogo.png"
 
 function BlinkistLogoComponent() {
   return (

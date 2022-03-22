@@ -8,6 +8,7 @@ import NoMatch from '../molecules/NoMatch'
 import CurrentlyReading from './CurrentlyReading'
 import FinishedBooks from './FinishedBooks'
 import BookDetails from '../pages/bookdetails/BookDetails'
+import Entrepreneurship from '../pages/Entrepreneurship'
 
 
 function Body() {
@@ -20,7 +21,8 @@ function Body() {
             <Route path="finished" element={<FinishedBooks/>} />
           </Route>
           <Route path="*" element={<NoMatch/>}/>
-          <Route path="bookdetails" element={<BookDetails/>} />
+          <Route path="bookdetails/:bookId" element={<BookDetails/>} />
+          <Route path="entrepreneurship" element={<Entrepreneurship />} />
       </Routes>
     </div>
   )

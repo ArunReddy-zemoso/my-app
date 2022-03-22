@@ -1,9 +1,9 @@
 import React from 'react'
 import {Stack} from '@mui/material'
 
-import clock from '../../../images/clock.png'
+import clock from '../../../resources/images/clock.png'
 
-function ReadTime() {
+function ReadTime(props:{time:number}) {
     const clockLogoStyle={
         width:'16.67px',
         height:'16.67px',
@@ -21,7 +21,7 @@ function ReadTime() {
     <div>
       <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
             <img style={clockLogoStyle} src={clock} alt="" />
-            <p style={timeReadStyle}>13-minute read</p>
+            <p style={timeReadStyle}>{props.time}-minute read</p>
         </Stack>
     </div>
   )

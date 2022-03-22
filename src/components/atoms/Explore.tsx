@@ -1,5 +1,5 @@
 import React from 'react'
-import arrorExpand from '../../images/arrowExpand.png'
+import arrorExpand from '../../resources/images/arrowExpand.png'
 import '../../styles/Explore.css'
 
 function Explore() {

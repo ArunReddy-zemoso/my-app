@@ -1,16 +1,20 @@
 import React from 'react'
-import {Typography} from '@mui/material'
+import {Link} from 'react-router-dom'
+import {Typography,Stack} from '@mui/material'
 import {Tabs,Tab} from '@mui/material'
 import { makeStyles} from '@mui/styles'
 
+
 import '../../styles/Library.css'
+import {COLORS} from '../../constants'
 import CurrentlyReading from '../organisms/CurrentlyReading'
 import FinishedBooks from '../organisms/FinishedBooks'
+import TabName from '../atoms/TabName'
 
 const useStyles =makeStyles({
   tabs:{
     margin:"0px 0",
-    borderBottom:"2px solid grey",
+    borderBottom:"1px solid grey",
   },
   tab:{
     color:"grey",
@@ -20,17 +24,28 @@ const useStyles =makeStyles({
   },
   heading:{
     width: "300px",
-    height: "45px",
+    height: "65px",
 
     fontFamily: 'Cera Pro',
     fontStyle: "normal",
     fontWeight: "700",
-    fontSize: "36px",
+    fontSize: "56px",
     color: "#03314B",
+    marginBottom:"50px",
   }
 })
 
-
+type booktype = {
+  id: number;
+  title: string;
+  author: string;
+  time: number;
+  reads: string;
+  status: string;
+  trending: boolean;
+  latest: boolean;
+  audio: boolean;
+};
 
 
 
@@ -46,10 +61,14 @@ export default function Library() {
 
   return (
     <>
-      <Typography className={classes.heading} variant="h4">My Library</Typography>
-      <Tabs className={classes.tabs} value={selectedTab} onChange={handleChange} >
-        <Tab className={classes.tab} label="Currently reading" value={0} />
-        <Tab className={classes.tab} label="Finished" value={1} />
+      <Typography className={classes.heading} >My Library</Typography>
+      <Tabs className={classes.tabs} value={selectedTab} onChange={handleChange} TabIndicatorProps={{
+        style:{
+          backgroundColor:COLORS.LIGHT_GREEN,
+        }
+      }}>
+        <Tab className={classes.tab} label={<TabName text="Currently reading" isSet={selectedTab===0} />} value={0} />
+        <Tab className={classes.tab} label={<TabName text="Finished" isSet={selectedTab===1} />} value={1} />
       </Tabs>
       {selectedTab === 0 && <CurrentlyReading />}
       {selectedTab === 1 && <FinishedBooks />}

@@ -1,8 +1,10 @@
 import React from 'react'
+import {useState, useEffect} from 'react'
 import {Grid} from '@mui/material'
 import { makeStyles} from '@mui/styles'
 
 import Book from '../molecules/Book'
+import API from '../../api'
 
 const useStyles =makeStyles({
   gridContainer: {
@@ -14,18 +16,47 @@ const useStyles =makeStyles({
   },
 })
 
+type booktype = {
+  id: number;
+  title: string;
+  author: string;
+  time: number;
+  reads: string;
+  status: string;
+  trending: boolean;
+  latest: boolean;
+  audio: boolean;
+};
+
 function FinishedBooks() {
   const classes=useStyles();
-  const books:number[]=[1];
+  const[books,setBooks] =useState([]);
+
+    const fetchBooksData=async () =>{
+      const response = await API.get("books");
+      return response.data;
+    };
+
+    useEffect(() => {
+      async function getBooks(){
+        const fetchedBooks = await fetchBooksData();
+        setBooks(fetchedBooks);
+      }
+      getBooks();
+    })
   return (
     <div>
       <Grid container spacing={3} className={classes.gridContainer}>
         {
-          books.map((book)=>(
-            <Grid className={classes.book} item xs={12} sm={6} md={3}>
-              <Book key={book} />
-            </Grid>
-          ))
+          books.map((book:booktype)=>{
+            if(book.status === 'finished'){
+              return(
+                <Grid key={book.id} className={classes.book} item xs={12} sm={6} md={3}>
+                  <Book val={book} />
+                </Grid>
+              )
+            }
+          })
         }
       </Grid>
     </div>

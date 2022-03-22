@@ -1,5 +1,5 @@
 import React from 'react'
-import Expand from '../../images/arrowExpand.png'
+import Expand from '../../resources/images/arrowExpand.png'
 import Avatar from '@mui/material/Avatar'
 import '../../styles/Avatar.css'
 

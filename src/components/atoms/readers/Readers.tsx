@@ -1,8 +1,8 @@
 import React from 'react'
 import {Stack} from '@mui/material'
 
-import userLogo from '../../../images/user.png'
-function Readers() {
+import userLogo from '../../../resources/images/user.png'
+function Readers(props:{reads:string}) {
     const clockLogoStyle={
         width:'16.67px',
         height:'16.67px',
@@ -20,7 +20,7 @@ function Readers() {
     <div>
       <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
                 <img style={clockLogoStyle} src={userLogo} alt="" />
-                <p style={timeReadStyle}>1.9k reads</p>
+                <p style={timeReadStyle}>{props.reads} reads</p>
         </Stack>
     </div>
   )

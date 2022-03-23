@@ -1,11 +1,16 @@
-.myLibrary{
+.myLibrary > span{
+    text-decoration:none;
     font-family: 'Cera Pro';
     font-style: normal;
     font-size: 30px;
     font-weight: bold;
+    display: inline-block;
+    color:black;
+    min-width:157px;
 }
 
-.myLibrary > p:hover{
+.myLibrary > span:hover{
     border-bottom: 2px solid blue;
     cursor: pointer;
+    text-underline-offset: 2px;
 }

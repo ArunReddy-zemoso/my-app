@@ -21,6 +21,9 @@ import book11 from '../../resources/bookImages/book11.png'
 
 import ReadTime from '../atoms/readtime/ReadTime'
 import Readers from '../atoms/readers/Readers'
+import PendingRectangle from '../atoms/PendingRectangle'
+import FinishedRectangle from '../atoms/FinishedRectangle'
+import AddToLibraryButton from '../molecules/AddToLibraryButton'
 
 type booktype = {
   id: number;
@@ -64,7 +67,8 @@ function getBookById(id: number) {
 export default function Book(props:{val:booktype}) {
     const cardStyle={
         width:'350px',
-        height:'550px',
+        //minHeight:'550px',
+        height:'auto',
         border: '1px solid #E1ECFC',
         borderRadius: '8px',
         backgroundColor: '#FFFFFF',
@@ -81,20 +85,8 @@ export default function Book(props:{val:booktype}) {
         fontSize:'18px',
         color:'#6D787E'
     }
-    const clockLogoStyle={
-        width:'16.67px',
-        height:'16.67px',
-        color: "#6D787E"
-    }
-    const timeReadStyle = {
-        width: '96px',
-        height: '18px',
-        fontFamily: 'Cera Pro',
-        fontWeight: '400',
-        fontSize:'14px',
-        color: "#6D787E"
-    }
     
+
   return (
     <Card style={cardStyle}>
       <Link to={`/bookdetails/${props.val.id}`} style={{textDecoration:'none'}}>
@@ -106,7 +98,7 @@ export default function Book(props:{val:booktype}) {
             image={getBookById(props.val.id)}
             alt="Book name"
           />
-          <CardContent>
+          <CardContent style={{height: 'auto'}}>
             <Typography style={bookNameStyle} gutterBottom variant="h5" component="div">
               {props.val.title}
             </Typography>
@@ -117,8 +109,11 @@ export default function Book(props:{val:booktype}) {
               <ReadTime time={props.val.time} />
               <Readers reads={props.val.reads}/>
             </Stack>
-            <ButtonComponent text="Finished" />
           </CardContent>
+          {props.val.status!=='not added' && <ButtonComponent text={props.val.status==='finished' ?'Read again':'Finished'} val={props.val} />}
+          {props.val.status==='not added' && <AddToLibraryButton val={props.val} />}
+          {props.val.status==='finished' && <FinishedRectangle />}
+          {props.val.status==='pending' && <PendingRectangle />}
         </CardActionArea>
       </Link>
     </Card>

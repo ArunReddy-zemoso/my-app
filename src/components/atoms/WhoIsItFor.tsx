@@ -1,7 +1,7 @@
 import React from 'react'
 import {Typography} from '@mui/material'
 
-function WhoIsItFor() {
+function WhoIsItFor(props:{text:string}) {
     const styles={
         fontFamily: 'Cera Pro',
         fontStyle: "normal",
@@ -12,7 +12,7 @@ function WhoIsItFor() {
   return (
     <div>
         <Typography style={styles}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae eum, nesciunt expedita libero repellat beatae dolorem voluptatum soluta tempora error animi ut minima, numquam quibusdam assumenda, culpa fugiat? Placeat, maiores.
+            {props.text}
         </Typography>
     </div>
   )

@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
     gap: 2px;
+}
+
+.explore > p{
     font-family: 'Cera Pro';
     font-size: 30px;
     font-weight: bold;

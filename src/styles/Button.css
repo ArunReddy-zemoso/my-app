@@ -2,22 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height:50px;
+    width:100%;
+}
+
+.button > p{
+    font-size:20px;
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
     color: #0365F2;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    height:auto;
-    width:100%;
-    top: 14px;
-}
-
-p{
-    font-size:20px;
+    margin:0;
+    padding:0;
 }
 
 .button > p:hover{

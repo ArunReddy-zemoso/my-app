@@ -1,0 +1,8 @@
+.AddToLibrary:hover{
+    color:white;
+    background-color:blue;
+}
+
+.AddToLibrary{
+    border-top: 1px solid rgb(223, 237, 243);
+}

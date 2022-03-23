@@ -3,20 +3,7 @@ import {Typography,Box,Button,Tabs,Tab} from '@mui/material'
 import { makeStyles} from '@mui/styles'
 import {useParams} from 'react-router-dom'
 
-import book1 from '../../../resources/bookImages/book1.png'
-import book2 from '../../../resources/bookImages/book2.png'
-import book3 from '../../../resources/bookImages/book3.png'
-import book4 from '../../../resources/bookImages/book4.png'
-import book5 from '../../../resources/bookImages/book5.png'
-import book6 from '../../../resources/bookImages/book6.png'
-import book7 from '../../../resources/bookImages/book7.png'
-import book8 from '../../../resources/bookImages/book8.png'
-import book9 from '../../../resources/bookImages/book9.png'
-import book10 from '../../../resources/bookImages/book10.png'
-import book11 from '../../../resources/bookImages/book11.png'
-
 import ReadTime from "../../atoms/readtime/ReadTime"
-import Bookimage from '../../../resources/images/1.png'
 import Synopsis from '../../atoms/Synopsis'
 import WhoisItFor from '../../atoms/WhoIsItFor'
 import AboutTheAuthor from '../../atoms/AboutTheAuthor'
@@ -226,9 +213,9 @@ function BookDetails() {
           <Tab className={classes.tab} label="Who is it for?" value={1} />
           <Tab className={classes.tab} label="About the author" value={2} />
         </Tabs>
-        {selectedTab===0 && <Synopsis/>}
-        {selectedTab===1 && <WhoisItFor />}
-        {selectedTab===2 && <AboutTheAuthor />}
+        {selectedTab===0 && <Synopsis text={book[0].synopsis}/>}
+        {selectedTab===1 && <WhoisItFor text={book[0].for} />}
+        {selectedTab===2 && <AboutTheAuthor text={book[0].aboutAuthor} />}
       </div>
     </div>
   )

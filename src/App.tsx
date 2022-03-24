@@ -8,6 +8,8 @@ import Library from './components/pages/Library'
 
 function App() {
   return (
+    <>
+    <div id='portal'></div>
     <div className="App">
       <header className="App-header">
         <Header></Header>
@@ -19,6 +21,7 @@ function App() {
         <Footer></Footer>
       </footer>
     </div>
+    </>
   );
 }
 

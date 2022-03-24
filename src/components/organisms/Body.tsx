@@ -10,8 +10,8 @@ import FinishedBooks from './FinishedBooks'
 import BookDetails from '../pages/bookdetails/BookDetails'
 import Entrepreneurship from '../pages/Entrepreneurship'
 
-
 function Body() {
+  
   return (
     <div className='body'>
       <Routes>

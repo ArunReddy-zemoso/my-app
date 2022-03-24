@@ -1,6 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Typography,Stack} from '@mui/material'
+import {Typography} from '@mui/material'
 import {Tabs,Tab} from '@mui/material'
 import { makeStyles} from '@mui/styles'
 
@@ -70,6 +69,7 @@ export default function Library() {
         <Tab className={classes.tab} label={<TabName text="Currently reading" isSet={selectedTab===0} />} value={0} />
         <Tab className={classes.tab} label={<TabName text="Finished" isSet={selectedTab===1} />} value={1} />
       </Tabs>
+      {/* <ExploreComponent text="arun"/> */}
       {selectedTab === 0 && <CurrentlyReading />}
       {selectedTab === 1 && <FinishedBooks />}
     </>
